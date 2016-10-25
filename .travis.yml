@@ -15,4 +15,4 @@ before_install:
     - docker build -t webapp:test -f ./Dockerfile .
 
 script:
-    - docker run -it -v $HOME/cache/.nuget/packages webapp:test
+    - docker run -it -rm -v $PWD/packages:/root/.nuget/packages webapp:test
