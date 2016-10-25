@@ -11,6 +11,8 @@ sudo: required
 services:
     - docker
 
-script:
+before_install:
     - docker build -t webapp:test -f ./Lab6/docker/Dockerfile .
+
+script:
     - docker run -it --rm -v $HOME/cache/.nuget/packages webapp:test
